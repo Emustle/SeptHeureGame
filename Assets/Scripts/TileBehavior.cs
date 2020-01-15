@@ -67,7 +67,7 @@ public class TileBehavior : MonoBehaviour
 
     private void OnTriggerEnter(Collider a_Collider)
     {
-        
+        Debug.Log("AAAAAAAAAAA");
         a_Collider.GetComponent<player>().CurrentTile = gameObject;
     }
 }

@@ -33,7 +33,10 @@ public class RotationJourNuit : MonoBehaviour
     }
     void Update()
     {
-
+        if (!CameraBehavior.Instance.IsGameStarted)
+        {
+            return;
+        }
         //modifying the Vector3, based on input multiplied by speed and time
         m_CurrentEulerAngles += new Vector3(x, y, z) * Time.deltaTime * rotationSpeed;
 

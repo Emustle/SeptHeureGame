@@ -49,7 +49,7 @@ public class player : MonoBehaviour
         //ROTATION ET DEPLACEMENT
         if(!m_IsMoving && m_CurrentTile.GetComponent<TileBehavior>().TileType == TileBehavior.TileTypeEnum.BED && m_GotAllObjects)
         {
-            StartCoroutine(CameraBehavior.Instance.FadeBlackScreen(1, 3));
+            StartCoroutine(CameraBehavior.Instance.FadeBlackScreen(1, 3, 0));
             return;
         }
 
@@ -129,7 +129,7 @@ public class player : MonoBehaviour
                     if (!m_IsNextPosSet && !m_IsMoving)
                     {
                         m_IsNextPosSet = true;
-                        m_Collider.enabled = true;
+                        //m_Collider.enabled = true;
                         m_IsMoving = true;
                         m_NextPos = transform.position + transform.forward;
                     }
@@ -140,7 +140,7 @@ public class player : MonoBehaviour
 
                     if (Vector3.Distance(transform.position, m_NextPos) < 0.001)
                     {
-                        m_Collider.enabled = false;
+                        //m_Collider.enabled = false;
                         m_IsMoving = false;
                         m_IsNextPosSet = false;
                         m_MovementAccepted = false;
