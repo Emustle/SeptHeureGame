@@ -6,6 +6,7 @@ public class TileBehavior : MonoBehaviour
 {
     public enum m_TileTypeEnum {WALKABLE, OBSTACLE};
     public m_TileTypeEnum m_TileType;
+    public int PositionX, PositionY;
     [SerializeField]
     private GameObject m_NorthTile;
     [SerializeField]
@@ -15,6 +16,11 @@ public class TileBehavior : MonoBehaviour
     [SerializeField]
     private GameObject m_WestTile;
 
+    private void Awake()
+    {
+        PositionX = (int)transform.localPosition.x;
+        PositionY = (int)transform.localPosition.z;
+    }
     // Start is called before the first frame update
     void Start()
     {
