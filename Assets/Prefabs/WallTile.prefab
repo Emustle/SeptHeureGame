@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2816835574600765777}
   - component: {fileID: 4497389710793507123}
   - component: {fileID: 4331068036987280421}
-  - component: {fileID: 3725661571910073257}
+  - component: {fileID: 1107284126}
   m_Layer: 0
-  m_Name: prefab_2
+  m_Name: WallTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 3336841437036812714}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.64, y: 0.08, z: -3.06}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.10000006, y: 0.1, z: 0.10000006}
   m_Children:
   - {fileID: 127778064454229594}
   m_Father: {fileID: 0}
@@ -80,20 +80,23 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &3725661571910073257
-MeshCollider:
+--- !u!114 &1107284126
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3336841437036812714}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8fcd4fe2b1bb69478eef4d2a4fdb085, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TileType: 1
+  m_NorthTile: {fileID: 0}
+  m_EastTile: {fileID: 0}
+  m_SouthTile: {fileID: 0}
+  m_WestTile: {fileID: 0}
 --- !u!1 &4008725784235107833
 GameObject:
   m_ObjectHideFlags: 0

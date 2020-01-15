@@ -212,7 +212,7 @@ Transform:
   m_GameObject: {fileID: 3092714135780441015}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2.32, z: 0}
-  m_LocalScale: {x: 1.5, y: 4.8044, z: 1.5}
+  m_LocalScale: {x: 2.5, y: 4.8044, z: 2.5}
   m_Children: []
   m_Father: {fileID: 5738036779724293687}
   m_RootOrder: 0
@@ -303,8 +303,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4174164315122777965}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.78, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalPosition: {x: 0.052297, y: 5.6629, z: -0.013643}
+  m_LocalScale: {x: 6.2736, y: 6.2736, z: 6.2736}
   m_Children:
   - {fileID: 3658357951647754979}
   - {fileID: 2317959774959191197}
@@ -384,9 +384,9 @@ GameObject:
   - component: {fileID: 5738036779724293687}
   - component: {fileID: 8639699201230948751}
   - component: {fileID: 4335380439549706822}
-  - component: {fileID: 9056227142941234193}
+  - component: {fileID: 4617058914625870775}
   m_Layer: 0
-  m_Name: prefab_1
+  m_Name: TreeTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -401,7 +401,7 @@ Transform:
   m_GameObject: {fileID: 4278116648872737047}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.3, y: 0.12, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 6004288085166043540}
   - {fileID: 5549434607704889479}
@@ -454,20 +454,23 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &9056227142941234193
-MeshCollider:
+--- !u!114 &4617058914625870775
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4278116648872737047}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8fcd4fe2b1bb69478eef4d2a4fdb085, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TileType: 1
+  m_NorthTile: {fileID: 0}
+  m_EastTile: {fileID: 0}
+  m_SouthTile: {fileID: 0}
+  m_WestTile: {fileID: 0}
 --- !u!1 &5570848766112357953
 GameObject:
   m_ObjectHideFlags: 0
