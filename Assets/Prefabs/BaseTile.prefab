@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1198852396114061199}
   - component: {fileID: 3231521205656336505}
   - component: {fileID: 550889743598652533}
+  - component: {fileID: -8375746210447399714}
   m_Layer: 0
   m_Name: BaseTile
   m_TagString: Untagged
@@ -92,7 +93,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TileType: 0
+  PositionX: 0
+  PositionY: 0
   m_NorthTile: {fileID: 0}
   m_EastTile: {fileID: 0}
   m_SouthTile: {fileID: 0}
   m_WestTile: {fileID: 0}
+--- !u!65 &-8375746210447399714
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3210732600510141150}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
