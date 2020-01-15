@@ -14,6 +14,9 @@ public class player : MonoBehaviour
     private bool m_IsMoving;
     private bool m_IsNextPosSet;
 
+    private float m_KeyRepeatRate = 0.3f;
+    private float m_InputHoldTime = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,11 +33,15 @@ public class player : MonoBehaviour
     {
         //ROTATION ET DEPLACEMENT
 
+        m_InputHoldTime += Time.deltaTime;
+
         float t_HorizontalDir = Input.GetAxis("Horizontal");
         float t_VerticalDir = Input.GetAxis("Vertical");
 
-        if ((t_HorizontalDir != 0 || t_VerticalDir != 0) && !m_IsMoving)
+        if ((t_HorizontalDir != 0 || t_VerticalDir != 0) && !m_IsMoving && m_InputHoldTime > m_KeyRepeatRate)
         {
+            m_InputHoldTime = 0;
+
             if (t_HorizontalDir != 0)
                 t_VerticalDir = 0;
             if (t_VerticalDir != 0)
