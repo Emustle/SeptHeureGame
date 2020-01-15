@@ -14,6 +14,7 @@ public class player : MonoBehaviour
     //private Rigidbody m_Rb;
     private bool m_IsMoving;
     private bool m_MovementAccepted;
+    //private bool m_IsNextPosSet;
     private float m_KeyRepeatRate = 0.3f;
     private float m_InputHoldTime;
 
@@ -28,6 +29,7 @@ public class player : MonoBehaviour
     {
         m_CurrentTile = m_StartingTile;
         m_RotSpeed = 800f;
+        //m_Rb = GetComponent<Rigidbody>();
 
         m_NextPos = transform.position;
         m_IsMoving = false;
