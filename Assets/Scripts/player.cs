@@ -135,4 +135,10 @@ public class player : MonoBehaviour
         set { m_CurrentTile = value; }
     }
 
+    /*
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(m_CurrentTile.transform.position, m_CurrentTile.transform.lossyScale);
+    }*/
 }

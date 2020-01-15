@@ -201,19 +201,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1224265826}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &30385167
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 30385166}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.5623865, y: 0.48979855, z: 0.31669712}
-  m_Center: {x: -0.049714565, y: -0.9283829, z: -0.06920242}
 --- !u!1001 &73507115
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4374,24 +4361,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2876244731017148442, guid: 3b79f294466d23d47897dd093189f071,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2876244731017148441, guid: 3b79f294466d23d47897dd093189f071,
         type: 3}
       propertyPath: m_StartingTile
       value: 
       objectReference: {fileID: 172892791}
-    - target: {fileID: 698247662, guid: 3b79f294466d23d47897dd093189f071, type: 3}
-      propertyPath: m_Shadows.m_Strength
-      value: 0.015
-      objectReference: {fileID: 0}
-    - target: {fileID: 698247662, guid: 3b79f294466d23d47897dd093189f071, type: 3}
-      propertyPath: m_Shadows.m_Type
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b79f294466d23d47897dd093189f071, type: 3}
 --- !u!1001 &1288641574
