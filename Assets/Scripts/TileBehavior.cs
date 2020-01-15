@@ -6,7 +6,7 @@ public class TileBehavior : MonoBehaviour
 {
     public enum m_TileTypeEnum {WALKABLE, OBSTACLE};
     public m_TileTypeEnum m_TileType;
-    public int PositionX, PositionY;
+    private int m_PositionX, m_PositionY;
     [SerializeField]
     private GameObject m_NorthTile;
     [SerializeField]
@@ -18,8 +18,8 @@ public class TileBehavior : MonoBehaviour
 
     private void Awake()
     {
-        PositionX = (int)transform.localPosition.x;
-        PositionY = (int)transform.localPosition.z;
+        m_PositionX = (int)transform.localPosition.x;
+        m_PositionY = (int)transform.localPosition.z;
     }
     // Start is called before the first frame update
     void Start()
@@ -48,5 +48,15 @@ public class TileBehavior : MonoBehaviour
     public void SetWestTile(GameObject a_Tile)
     {
         m_WestTile = a_Tile;
+    }
+
+    public int PositionX
+    {
+        get { return m_PositionX; }
+    }
+
+    public int PositionY
+    {
+        get { return m_PositionY; }
     }
 }

@@ -16,7 +16,7 @@ public class GridBehavior : MonoBehaviour
         int t_SortingColumn = 0;
         int t_SortingRow = 0;
         //NOTE: TOUT VA PLANTER SI VOUS NE DONNEZ PAS LES BONNES POSITIONS X/Y AUX TUILES OU SI ELLES SONT MALS ASSIGNÉES TOUT COURT!!!!!!
-        //Pour éviter cela, il faut A B S O L U M E N T que les coordonnées locales des tuiles soient PRÉCISÉMENT de 0,0,0 en montant! 
+        //Pour éviter cela, il faut A B S O L U M E N T que les coordonnées locales des tuiles soient PRÉCISÉMENT de 0,0,0 en montant incrémentament! 
 
         
         while(t_NumberSorted != transform.childCount)
@@ -49,7 +49,7 @@ public class GridBehavior : MonoBehaviour
             }  
             if(i + m_GridSizeX < m_Tiles.Count)
             {
-                Debug.Log(i);
+                //Debug.Log(i);
                 m_Tiles[i].GetComponent<TileBehavior>().SetNorthTile(m_Tiles[i + m_GridSizeX]);
             }
             if(i - 1 >= 0 && i % m_GridSizeX != 0)
