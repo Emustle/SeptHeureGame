@@ -24,7 +24,9 @@ public class player : MonoBehaviour
 
     private Collider m_Collider;
 
-    private bool m_GotObject;
+    private bool m_GotAllObjects;
+    private GameObject[] m_Items = null;
+    private int m_NbObjectsRetrieved;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +36,8 @@ public class player : MonoBehaviour
         //m_Rb = GetComponent<Rigidbody>();
 
         m_NextPos = transform.position;
-        m_GotObject = false;
+        m_GotAllObjects = false;
+        m_NbObjectsRetrieved = 0;
         m_IsMoving = false;
         m_IsNextPosSet = false;
         m_Collider = gameObject.GetComponent<BoxCollider>();
@@ -44,17 +47,29 @@ public class player : MonoBehaviour
     void Update()
     {
         //ROTATION ET DEPLACEMENT
-        if(!m_IsMoving && m_CurrentTile.GetComponent<TileBehavior>().TileType == TileBehavior.TileTypeEnum.BED && m_GotObject)
+        if(!m_IsMoving && m_CurrentTile.GetComponent<TileBehavior>().TileType == TileBehavior.TileTypeEnum.BED && m_GotAllObjects)
         {
             StartCoroutine(CameraBehavior.Instance.FadeBlackScreen(1, 3));
             return;
         }
 
-        if (!m_IsMoving && m_CurrentTile.GetComponent<TileBehavior>().TileType == TileBehavior.TileTypeEnum.PICKABLE && !m_GotObject)
+        if (!m_IsMoving && m_CurrentTile.GetComponent<TileBehavior>().TileType == TileBehavior.TileTypeEnum.PICKABLE && !m_GotAllObjects)
         {
+            //Destruction de l'item
+            
             Destroy(m_CurrentTile.transform.GetChild(0).gameObject);
-            m_GotObject = true;
-            Debug.LogWarning("Le joueur a ramassé un objet");
+            //Désactivation du pickable de la case
+            m_CurrentTile.GetComponent<TileBehavior>().TileType = TileBehavior.TileTypeEnum.WALKABLE;
+
+            Debug.LogWarning("Le joueur a ramssé un objet");
+            //Ajout des points
+            m_NbObjectsRetrieved++;
+
+            //Vérifier que la scène contient encore des objets à ramasser
+            if (!RemainsItems())
+                m_GotAllObjects = true;
+            else
+                Debug.LogWarning("Il reste des objets à ramasser");
         }
 
 
@@ -123,7 +138,7 @@ public class player : MonoBehaviour
                         transform.position = Vector3.MoveTowards(transform.position, m_NextPos, 5 * Time.deltaTime);
                     }
 
-                    if (Vector3.Distance(transform.position, m_NextPos) < 0.01)
+                    if (Vector3.Distance(transform.position, m_NextPos) < 0.001)
                     {
                         m_Collider.enabled = false;
                         m_IsMoving = false;
@@ -145,6 +160,14 @@ public class player : MonoBehaviour
     {
         get { return m_CurrentTile; }
         set { m_CurrentTile = value; }
+    }
+
+    private bool RemainsItems()
+    {
+        m_Items = GameObject.FindGameObjectsWithTag("item");
+        Debug.Log(m_Items.Length);
+
+        return m_Items.Length-1 > 0 ? true : false;
     }
 
     /*

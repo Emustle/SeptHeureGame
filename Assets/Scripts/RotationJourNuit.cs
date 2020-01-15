@@ -10,7 +10,7 @@ public class RotationJourNuit : MonoBehaviour
     private float m_FullRotation;
     private float m_InitialRotation;
     [SerializeField]
-    private float m_TargetRotation = -25f;
+    private float m_TargetRotation;
     private Vector3 m_CurrentEulerAngles;
     //Vector3 currentEulerAngles = new Vector3 (50,0,0);
     Quaternion currentRotation;
@@ -38,7 +38,7 @@ public class RotationJourNuit : MonoBehaviour
         m_CurrentEulerAngles += new Vector3(x, y, z) * Time.deltaTime * rotationSpeed;
 
         //Réduire l'intensité
-        GetComponent<Light>().intensity -= Time.deltaTime * 0.0125f;
+        GetComponent<Light>().intensity -= Time.deltaTime * 0.02f;
 
         //moving the value of the Vector3 into Quanternion.eulerAngle format
         currentRotation.eulerAngles = m_CurrentEulerAngles;
@@ -46,8 +46,8 @@ public class RotationJourNuit : MonoBehaviour
         //apply the Quaternion.eulerAngles change to the gameObject
         transform.rotation = currentRotation;
         //modifying the Vector3, based on input multiplied by speed and time
-        m_RotationToGo = m_CurrentEulerAngles.x + 25;
-        if (m_CurrentEulerAngles.x <= -25f)
+        m_RotationToGo = m_CurrentEulerAngles.x;
+        if (m_CurrentEulerAngles.x <= m_TargetRotation)
         {
             rotationSpeed = 0;
         }
