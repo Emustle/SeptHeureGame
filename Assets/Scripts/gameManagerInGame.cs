@@ -6,19 +6,33 @@ using UnityEngine.SceneManagement;
 public class gameManagerInGame : MonoBehaviour
 {
     public GameObject MenuPause;
+    public GameObject Tuto;
     // Start is called before the first frame update
     void Start()
     {
         MenuPause.SetActive(false);
+        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("TestHV"))
+        {
+            
+            Tuto.SetActive(true);
+
+        }
+        
     }
 
     // Update is called once per frame
     void Update()
+
     {
         if (Input.GetKeyDown("escape"))
         {
             PauseMenu();
         }
+        if (Time.time > 5f)
+        {
+            Tuto.SetActive(false);
+        }
+       
         
     }
     public void PauseMenu()
@@ -42,4 +56,5 @@ public class gameManagerInGame : MonoBehaviour
         Time.timeScale = 1f;
 
     }
+   
 }

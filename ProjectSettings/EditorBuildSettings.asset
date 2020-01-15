@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/histoire.unity
     guid: 6750154da91f7be4f9c8d7babb78f3a9
+  - enabled: 1
+    path: Assets/Scenes/TestHV.unity
+    guid: 06d53d8b3fb75164cafe0624ebf238ec
   m_configObjects: {}

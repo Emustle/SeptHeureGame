@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 7dcaef1fdb8956f478077ee52f05e60c
+guid: b681bd527fdce2940ac218c06132725e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3703934314992278912
-    second: histoire_0
-  - first:
-      213: -6951589560750573867
-    second: histoire_1
-  - first:
-      213: -5300720967139440502
-    second: histoire_2
+      213: 8946146549352767850
+    second: manuscrit_0
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -95,55 +89,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: histoire_0
+      name: manuscrit_0
       rect:
         serializedVersion: 2
-        x: 1086
-        y: 2291
-        width: 3100
-        height: 3100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3507929a1b57d384988f5f2b6ce88ea4
-      internalID: 3703934314992278912
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: histoire_1
-      rect:
-        serializedVersion: 2
-        x: 683
-        y: 1322
-        width: 3974
-        height: 5024
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8d576391eee82a64ca451e8761ad4e19
-      internalID: -6951589560750573867
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: histoire_2
-      rect:
-        serializedVersion: 2
-        x: 2140
-        y: 2184
-        width: 1670
-        height: 581
+        x: 968
+        y: 2760
+        width: 3302
+        height: 2563
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,8 +103,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0486b4be100c244593f225746acd5b8
-      internalID: -5300720967139440502
+      spriteID: e985dbccc250e574db214796e02964d5
+      internalID: 8946146549352767850
       vertices: []
       indices: 
       edges: []
@@ -160,7 +112,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 0f64d474c2bea834c97217f60f73d47a
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
