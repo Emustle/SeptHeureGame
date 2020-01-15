@@ -24,6 +24,8 @@ public class player : MonoBehaviour
 
     private Collider m_Collider;
 
+    private bool m_GotObject;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,7 @@ public class player : MonoBehaviour
         //m_Rb = GetComponent<Rigidbody>();
 
         m_NextPos = transform.position;
+        m_GotObject = false;
         m_IsMoving = false;
         m_IsNextPosSet = false;
         m_Collider = gameObject.GetComponent<BoxCollider>();
@@ -41,11 +44,20 @@ public class player : MonoBehaviour
     void Update()
     {
         //ROTATION ET DEPLACEMENT
-        if(!m_IsMoving && m_CurrentTile.GetComponent<TileBehavior>().TileType == TileBehavior.TileTypeEnum.BED)
+        if(!m_IsMoving && m_CurrentTile.GetComponent<TileBehavior>().TileType == TileBehavior.TileTypeEnum.BED && m_GotObject)
         {
             StartCoroutine(CameraBehavior.Instance.FadeBlackScreen(1, 3));
             return;
         }
+
+        if (!m_IsMoving && m_CurrentTile.GetComponent<TileBehavior>().TileType == TileBehavior.TileTypeEnum.PICKABLE && !m_GotObject)
+        {
+            Destroy(m_CurrentTile.transform.GetChild(0).gameObject);
+            m_GotObject = true;
+            Debug.LogWarning("Le joueur a ramassé un objet");
+        }
+
+
         m_InputHoldTime += Time.deltaTime;
 
         float t_HorizontalDir = Input.GetAxis("Horizontal");
