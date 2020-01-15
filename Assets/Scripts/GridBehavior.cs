@@ -45,20 +45,20 @@ public class GridBehavior : MonoBehaviour
         {
             if(i >= m_GridSizeX)
             {
-                m_Tiles[i].GetComponent<TileBehavior>().SetSouthTile(m_Tiles[i - m_GridSizeX]);
+                m_Tiles[i].GetComponent<TileBehavior>().SouthTile = (m_Tiles[i - m_GridSizeX]);
             }  
             if(i + m_GridSizeX < m_Tiles.Count)
             {
                 //Debug.Log(i);
-                m_Tiles[i].GetComponent<TileBehavior>().SetNorthTile(m_Tiles[i + m_GridSizeX]);
+                m_Tiles[i].GetComponent<TileBehavior>().NorthTile = (m_Tiles[i + m_GridSizeX]);
             }
             if(i - 1 >= 0 && i % m_GridSizeX != 0)
             {
-                m_Tiles[i].GetComponent<TileBehavior>().SetWestTile(m_Tiles[i - 1]);
+                m_Tiles[i].GetComponent<TileBehavior>().WestTile = (m_Tiles[i - 1]);
             }
             if ((i + 1) % m_GridSizeX != 0 && i + 1 < m_Tiles.Count)
             {
-                m_Tiles[i].GetComponent<TileBehavior>().SetEastTile(m_Tiles[i + 1]);
+                m_Tiles[i].GetComponent<TileBehavior>().EastTile = (m_Tiles[i + 1]);
             }
         }
     }

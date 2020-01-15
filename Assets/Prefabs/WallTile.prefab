@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8fcd4fe2b1bb69478eef4d2a4fdb085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TileType: 1
+  TileType: 1
   m_NorthTile: {fileID: 0}
   m_EastTile: {fileID: 0}
   m_SouthTile: {fileID: 0}

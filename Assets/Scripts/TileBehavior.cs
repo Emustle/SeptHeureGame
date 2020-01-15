@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TileBehavior : MonoBehaviour
 {
-    public enum m_TileTypeEnum {WALKABLE, OBSTACLE};
-    public m_TileTypeEnum m_TileType;
+    public enum TileTypeEnum {WALKABLE, OBSTACLE};
+    public TileTypeEnum TileType;
     private int m_PositionX, m_PositionY;
     [SerializeField]
     private GameObject m_NorthTile;
@@ -33,22 +33,27 @@ public class TileBehavior : MonoBehaviour
         
     }
 
-    public void SetNorthTile(GameObject a_Tile)
+    public GameObject NorthTile
     {
-        m_NorthTile = a_Tile;
+        get { return m_NorthTile; }
+        set { m_NorthTile = value; }
     }
-    public void SetEastTile(GameObject a_Tile)
+    public GameObject EastTile
     {
-        m_EastTile = a_Tile;
+        get { return m_EastTile; }
+        set { m_EastTile = value; }
     }
-    public void SetSouthTile(GameObject a_Tile)
+    public GameObject SouthTile
     {
-        m_SouthTile = a_Tile;
+        get { return m_SouthTile; }
+        set { m_SouthTile = value; }
     }
-    public void SetWestTile(GameObject a_Tile)
+    public GameObject WestTile
     {
-        m_WestTile = a_Tile;
+        get { return m_WestTile; }
+        set { m_WestTile = value; }
     }
+
 
     public int PositionX
     {
@@ -58,5 +63,11 @@ public class TileBehavior : MonoBehaviour
     public int PositionY
     {
         get { return m_PositionY; }
+    }
+
+    private void OnTriggerEnter(Collider a_Collider)
+    {
+        
+        a_Collider.GetComponent<player>().CurrentTile = gameObject;
     }
 }
