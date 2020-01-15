@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TileBehavior : MonoBehaviour
 {
-    public enum TileTypeEnum {WALKABLE, OBSTACLE};
+    public enum TileTypeEnum {WALKABLE, OBSTACLE, BED};
     public TileTypeEnum TileType;
     private int m_PositionX, m_PositionY;
     [SerializeField]

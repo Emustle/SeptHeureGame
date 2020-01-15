@@ -44,16 +44,16 @@ public class RotationJourNuit : MonoBehaviour
 
     void OnGUI()
     {
-        GUIStyle style = new GUIStyle();
-        style.fontSize = 24;
+        //GUIStyle style = new GUIStyle();
+        //style.fontSize = 24;
         // Use eulerAngles to show the euler angles of the quaternion stored in Transform.Rotation
-        GUI.Label(new Rect(10, 0, 0, 0), "Rotating on X:" + x + " Y:" + y + " Z:" + z, style);
+        //GUI.Label(new Rect(10, 0, 0, 0), "Rotating on X:" + x + " Y:" + y + " Z:" + z, style);
 
         //outputs the Quanternion.eulerAngles value
-        GUI.Label(new Rect(10, 25, 0, 0), "CurrentEulerAngles: " + currentEulerAngles, style);
+        //GUI.Label(new Rect(10, 25, 0, 0), "CurrentEulerAngles: " + currentEulerAngles, style);
 
         //outputs the transform.eulerAngles of the GameObject
-        GUI.Label(new Rect(10, 50, 0, 0), "GameObject World Euler Angles: " + transform.eulerAngles, style);
+        //GUI.Label(new Rect(10, 50, 0, 0), "GameObject World Euler Angles: " + transform.eulerAngles, style);
     }
                
   

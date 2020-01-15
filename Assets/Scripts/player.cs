@@ -41,7 +41,11 @@ public class player : MonoBehaviour
     void Update()
     {
         //ROTATION ET DEPLACEMENT
-
+        if(!m_IsMoving && m_CurrentTile.GetComponent<TileBehavior>().TileType == TileBehavior.TileTypeEnum.BED)
+        {
+            StartCoroutine(CameraBehavior.Instance.FadeBlackScreen(1, 3));
+            return;
+        }
         m_InputHoldTime += Time.deltaTime;
 
         float t_HorizontalDir = Input.GetAxis("Horizontal");
@@ -59,10 +63,13 @@ public class player : MonoBehaviour
             m_DesiredDirection = new Vector3(t_HorizontalDir, 0, t_VerticalDir);
             
         }
-
-        m_TargetRot = Quaternion.LookRotation(m_DesiredDirection, Vector3.up);
+        if (m_DesiredDirection != new Vector3(0, 0, 0))
+        {
+            m_TargetRot = Quaternion.LookRotation(m_DesiredDirection, Vector3.up);
+        }
+        
         transform.rotation = Quaternion.RotateTowards(transform.rotation, m_TargetRot, Time.deltaTime*m_RotSpeed);
-        Debug.Log(transform.rotation.eulerAngles.y);
+     
         if (m_TargetRot == transform.rotation)
         {
 
