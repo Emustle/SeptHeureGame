@@ -26,6 +26,9 @@ public class RotationJourNuit : MonoBehaviour
         //modifying the Vector3, based on input multiplied by speed and time
         currentEulerAngles += new Vector3(x, y, z) * Time.deltaTime * rotationSpeed;
 
+        //Réduire l'intensité
+        GetComponent<Light>().intensity -= Time.deltaTime * 0.0125f;
+
         //moving the value of the Vector3 into Quanternion.eulerAngle format
         currentRotation.eulerAngles = currentEulerAngles;
 
