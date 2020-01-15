@@ -15,7 +15,7 @@ public class player : MonoBehaviour
     private bool m_IsMoving;
     private bool m_MovementAccepted;
     //private bool m_IsNextPosSet;
-    private float m_KeyRepeatRate = 0.3f;
+    private float m_KeyRepeatRate = 0.1f;
     private float m_InputHoldTime;
 
     [SerializeField]
