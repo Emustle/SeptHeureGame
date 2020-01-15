@@ -14,8 +14,6 @@ public class player : MonoBehaviour
     //private Rigidbody m_Rb;
     private bool m_IsMoving;
     private bool m_MovementAccepted;
-    private bool m_IsNextPosSet;
-
     private float m_KeyRepeatRate = 0.3f;
     private float m_InputHoldTime;
 
@@ -30,7 +28,6 @@ public class player : MonoBehaviour
     {
         m_CurrentTile = m_StartingTile;
         m_RotSpeed = 800f;
-        m_Rb = GetComponent<Rigidbody>();
 
         m_NextPos = transform.position;
         m_IsMoving = false;
@@ -51,10 +48,10 @@ public class player : MonoBehaviour
         {
             
             m_InputHoldTime = 0;
-
-            if (t_HorizontalDir != 0)
+            
+            if (t_HorizontalDir > 0f)
                 t_VerticalDir = 0;
-            if (t_VerticalDir != 0)
+            else if (t_VerticalDir > 0f)
                 t_HorizontalDir = 0;
 
             m_DesiredDirection = new Vector3(t_HorizontalDir, 0, t_VerticalDir);
@@ -68,22 +65,22 @@ public class player : MonoBehaviour
         {
 
 
-            if (t_HorizontalDir < 0.5f && transform.rotation.eulerAngles.y == 270 && m_CurrentTile.GetComponent<TileBehavior>().WestTile &&
+            if (t_HorizontalDir < 0f && transform.rotation.eulerAngles.y == 270 && m_CurrentTile.GetComponent<TileBehavior>().WestTile &&
                 m_CurrentTile.GetComponent<TileBehavior>().WestTile.GetComponent<TileBehavior>().TileType != TileBehavior.TileTypeEnum.OBSTACLE)
             {
                 m_MovementAccepted = true;
             }
-            else if (t_HorizontalDir > 0.5f && transform.rotation.eulerAngles.y == 90 && m_CurrentTile.GetComponent<TileBehavior>().EastTile
+            else if (t_HorizontalDir > 0f && transform.rotation.eulerAngles.y == 90 && m_CurrentTile.GetComponent<TileBehavior>().EastTile
                 && m_CurrentTile.GetComponent<TileBehavior>().EastTile.GetComponent<TileBehavior>().TileType != TileBehavior.TileTypeEnum.OBSTACLE)
             {
                 m_MovementAccepted = true;
             }
-            else if (t_VerticalDir < 0.5f &&transform.rotation.eulerAngles.y == 180 && m_CurrentTile.GetComponent<TileBehavior>().SouthTile &&
+            else if (t_VerticalDir < 0f &&transform.rotation.eulerAngles.y == 180 && m_CurrentTile.GetComponent<TileBehavior>().SouthTile &&
                 m_CurrentTile.GetComponent<TileBehavior>().SouthTile.GetComponent<TileBehavior>().TileType != TileBehavior.TileTypeEnum.OBSTACLE)
             {
                 m_MovementAccepted = true;
             }
-            else if (t_VerticalDir > 0.5f && transform.rotation.eulerAngles.y == 0 && m_CurrentTile.GetComponent<TileBehavior>().NorthTile &&
+            else if (t_VerticalDir > 0f && transform.rotation.eulerAngles.y == 0 && m_CurrentTile.GetComponent<TileBehavior>().NorthTile &&
                 m_CurrentTile.GetComponent<TileBehavior>().NorthTile.GetComponent<TileBehavior>().TileType != TileBehavior.TileTypeEnum.OBSTACLE)
             {
                 m_MovementAccepted = true;
