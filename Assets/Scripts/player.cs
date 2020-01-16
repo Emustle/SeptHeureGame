@@ -228,7 +228,7 @@ public class player : MonoBehaviour
     {
         if (a_Collider.GetComponent<Animator>())
         {
-            Debug.Log("AAAAAAAAA");
+            //Debug.Log("AAAAAAAAA");
             m_GameIsFinished = true;
             StartCoroutine(CameraBehavior.Instance.FadeBlackScreen(1, 1, 0));
             StartCoroutine(CameraBehavior.Instance.FadeGameOverScreen(1, 1, 0));
