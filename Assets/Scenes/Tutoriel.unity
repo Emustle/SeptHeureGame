@@ -5700,6 +5700,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bonhomme7h: {fileID: 243600065}
   audioSource: {fileID: 2012622998}
+  sonAmbiantDepart: {fileID: 8300000, guid: b47ea9f0511f33447b85373682b93b48, type: 3}
   songHorloge: {fileID: 8300000, guid: d895820a9f6a1d04185ce88341ac11ae, type: 3}
   songAmbiant: {fileID: 8300000, guid: 3c9f6033e912e7049b5b2e8506286861, type: 3}
   timer: 60
