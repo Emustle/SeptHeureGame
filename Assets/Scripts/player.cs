@@ -61,7 +61,7 @@ public class player : MonoBehaviour
         Vector3 t_MovementVector = new Vector3(0, 0.2f, 0);
 
         //Debug.Log(gameObject.transform.position.z + "/" + CurrentTile.transform.position.z);
-
+        //Debug.Log(m_GameIsFinished);
         if (m_GameIsFinished)
         {
             return;
@@ -224,6 +224,18 @@ public class player : MonoBehaviour
         return m_Items.Length-1 > 0 ? true : false;
     }
 
+    private void OnTriggerEnter(Collider a_Collider)
+    {
+        if (a_Collider.GetComponent<Animator>())
+        {
+            Debug.Log("AAAAAAAAA");
+            m_GameIsFinished = true;
+            StartCoroutine(CameraBehavior.Instance.FadeBlackScreen(1, 1, 0));
+            StartCoroutine(CameraBehavior.Instance.FadeGameOverScreen(1, 1, 0));
+        }
+        //m_GameIsFinished = true;
+
+    }
     /*
     private void OnDrawGizmos()
     {
