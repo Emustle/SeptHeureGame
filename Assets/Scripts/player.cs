@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
+    public AudioSource sourceAudioPas;
+    public AudioClip PasDeJo;
+    public AudioClip cookie;
     private Vector3 m_DesiredDirection;
     private Vector3 m_NextPos;
     private bool m_IsNextPosSet;
@@ -15,7 +18,7 @@ public class player : MonoBehaviour
     private bool m_IsMoving;
     private bool m_MovementAccepted;
     //private bool m_IsNextPosSet;
-    private float m_KeyRepeatRate = 0.1f;
+    private float m_KeyRepeatRate = 0.5f;
     private float m_InputHoldTime;
 
     [SerializeField]
@@ -58,6 +61,7 @@ public class player : MonoBehaviour
             //Destruction de l'item
             
             Destroy(m_CurrentTile.transform.GetChild(0).gameObject);
+            sourceAudioPas.PlayOneShot(cookie);
             //Désactivation du pickable de la case
             m_CurrentTile.GetComponent<TileBehavior>().TileType = TileBehavior.TileTypeEnum.WALKABLE;
 
@@ -105,6 +109,7 @@ public class player : MonoBehaviour
                 m_CurrentTile.GetComponent<TileBehavior>().WestTile.GetComponent<TileBehavior>().TileType != TileBehavior.TileTypeEnum.OBSTACLE)
             {
                 m_MovementAccepted = true;
+                
             }
             else if (t_HorizontalDir > 0f && transform.rotation.eulerAngles.y == 90 && m_CurrentTile.GetComponent<TileBehavior>().EastTile
                 && m_CurrentTile.GetComponent<TileBehavior>().EastTile.GetComponent<TileBehavior>().TileType != TileBehavior.TileTypeEnum.OBSTACLE)
@@ -132,6 +137,7 @@ public class player : MonoBehaviour
                         //m_Collider.enabled = true;
                         m_IsMoving = true;
                         m_NextPos = transform.position + transform.forward;
+                        sourceAudioPas.PlayOneShot(PasDeJo);
                     }
                     else
                     {
@@ -144,10 +150,12 @@ public class player : MonoBehaviour
                         m_IsMoving = false;
                         m_IsNextPosSet = false;
                         m_MovementAccepted = false;
+
                     }
 
 
                 }
+
             }
             else
             {

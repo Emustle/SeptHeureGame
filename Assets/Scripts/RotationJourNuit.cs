@@ -6,7 +6,8 @@ public class RotationJourNuit : MonoBehaviour
 {   
     public GameObject bonhomme7h;
     public AudioSource audioSource;
-    public AudioClip Musiqueaudio;
+    public AudioClip songHorloge;
+    public AudioClip songAmbiant;
     public int timer;
     bool dejaFait = false;
     float rotationSpeed = -1.25f;
@@ -25,7 +26,7 @@ public class RotationJourNuit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audioSource.clip = Musiqueaudio;
+        audioSource.clip = songHorloge;
         m_InitialRotation = transform.rotation.eulerAngles.x;
         m_FullRotation = m_InitialRotation - m_TargetRotation;
         m_RotationToGo = m_FullRotation;
@@ -63,9 +64,11 @@ public class RotationJourNuit : MonoBehaviour
         }
         if (audioSource.isPlaying == false && dejaFait == false && rotationSpeed == 0)
         {
-            audioSource.PlayOneShot(Musiqueaudio);
+            audioSource.PlayOneShot(songHorloge);
             dejaFait = true;
+            audioSource.PlayOneShot(songAmbiant);
         }
+        
        
         //Debug.Log(m_RotationToGo + "///" + m_FullRotation);
         CameraBehavior.Instance.TickClockNeedle(m_RotationToGo / m_FullRotation);
