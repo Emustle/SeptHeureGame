@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RotationJourNuit : MonoBehaviour
-{
+{   
+    public GameObject bonhomme7h;
+    public AudioSource audioSource;
+    public AudioClip Musiqueaudio;
     public int timer;
+    bool dejaFait = false;
     float rotationSpeed = -1.25f;
     private float m_RotationToGo;
     private float m_FullRotation;
     private float m_InitialRotation;
     [SerializeField]
+    
     private float m_TargetRotation;
     private Vector3 m_CurrentEulerAngles;
     //Vector3 currentEulerAngles = new Vector3 (50,0,0);
@@ -20,6 +25,7 @@ public class RotationJourNuit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioSource.clip = Musiqueaudio;
         m_InitialRotation = transform.rotation.eulerAngles.x;
         m_FullRotation = m_InitialRotation - m_TargetRotation;
         m_RotationToGo = m_FullRotation;
@@ -29,7 +35,6 @@ public class RotationJourNuit : MonoBehaviour
             Debug.Log("je sais pas ce que je fais");
         }
         x = 1 - x;
-        
     }
     void Update()
     {
@@ -53,13 +58,23 @@ public class RotationJourNuit : MonoBehaviour
         if (m_CurrentEulerAngles.x <= m_TargetRotation)
         {
             rotationSpeed = 0;
+            bonhomme7h.SetActive(true);
+
         }
+        if (audioSource.isPlaying == false && dejaFait == false && rotationSpeed == 0)
+        {
+            audioSource.PlayOneShot(Musiqueaudio);
+            dejaFait = true;
+        }
+       
         //Debug.Log(m_RotationToGo + "///" + m_FullRotation);
         CameraBehavior.Instance.TickClockNeedle(m_RotationToGo / m_FullRotation);
-        
+       
     }
+    
+    
 
-    void OnGUI()
+void OnGUI()
     {
         //GUIStyle style = new GUIStyle();
         //style.fontSize = 24;

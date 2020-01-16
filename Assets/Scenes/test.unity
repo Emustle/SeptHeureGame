@@ -224,6 +224,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78770e86f43e3fb42a5509b2b4fe37c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  Musiqueaudio: {fileID: 0}
   timer: 0
   m_TargetRotation: -25
 --- !u!1 &457321709 stripped
@@ -339,6 +341,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManagerInGame
       objectReference: {fileID: 0}
+    - target: {fileID: 304213071390330795, guid: 6c7784ebf3f119747b0c5c5f76579b4e,
+        type: 3}
+      propertyPath: MenuPause
+      value: 
+      objectReference: {fileID: 457321709}
     - target: {fileID: 304213071390330794, guid: 6c7784ebf3f119747b0c5c5f76579b4e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -394,11 +401,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 304213071390330795, guid: 6c7784ebf3f119747b0c5c5f76579b4e,
-        type: 3}
-      propertyPath: MenuPause
-      value: 
-      objectReference: {fileID: 457321709}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c7784ebf3f119747b0c5c5f76579b4e, type: 3}
 --- !u!1001 &4140962738196940207
