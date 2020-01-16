@@ -150,6 +150,7 @@ public class CameraBehavior : MonoBehaviour
                 t_NextScene = "Level2";
                 break;
             case 2:
+                t_NextScene = "Level3";
                 break;
         }
         SceneManager.LoadScene(t_NextScene, LoadSceneMode.Single);
