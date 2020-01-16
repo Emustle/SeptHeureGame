@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CameraBehavior : MonoBehaviour
 {
@@ -116,7 +117,15 @@ public class CameraBehavior : MonoBehaviour
             t_ElapsedTime += Time.deltaTime;
             yield return null;
         }
-        yield break;
+
+        while(t_ElapsedTime < a_Duration + 3)
+        {
+            t_ElapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        
+        SceneManager.LoadScene("credit", LoadSceneMode.Single);
+        //Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 
 
         //Debug.Log(m_UiHurtScreen.GetComponent<RawImage>().color);
