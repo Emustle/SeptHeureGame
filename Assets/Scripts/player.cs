@@ -83,8 +83,10 @@ public class player : MonoBehaviour
         if (!m_IsMoving && m_CurrentTile.GetComponent<TileBehavior>().TileType == TileBehavior.TileTypeEnum.PICKABLE && !m_GotAllObjects)
         {
             //Destruction de l'item
-            
-            Destroy(m_CurrentTile.transform.GetChild(0).gameObject);
+            if (m_CurrentTile.transform.childCount > 0)
+            {
+                Destroy(m_CurrentTile.transform.GetChild(0).gameObject);
+            }
             nombreCookie += 1;
             if (nombreCookie == 1)
             {
