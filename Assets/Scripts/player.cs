@@ -11,6 +11,8 @@ public class player : MonoBehaviour
     private Vector3 m_NextPos;
     private bool m_IsNextPosSet;
 
+    public GameObject Bed;
+
     private Quaternion m_TargetRot;
     private float m_RotSpeed;
 
@@ -28,7 +30,7 @@ public class player : MonoBehaviour
     private GameObject m_CurrentTile;
 
     private Collider m_Collider;
-
+    private bool m_GameIsFinished = false;
     private bool m_GotAllObjects;
     private GameObject[] m_Items = null;
     private int m_NbObjectsRetrieved;
@@ -53,13 +55,23 @@ public class player : MonoBehaviour
     void Update()
     {
         Vector3 t_MovementVector = new Vector3(0, 0.2f, 0);
-        
+
         //Debug.Log(gameObject.transform.position.z + "/" + CurrentTile.transform.position.z);
-        
+
+        if (m_GameIsFinished)
+        {
+            return;
+        }
         
         //ROTATION ET DEPLACEMENT
         if(!m_IsMoving && m_CurrentTile.GetComponent<TileBehavior>().TileType == TileBehavior.TileTypeEnum.BED && m_GotAllObjects)
         {
+            m_Animator.SetBool("IsMoving", false);
+            m_Animator.SetTrigger("GoToSleep");
+            //transform.position = Vector3.MoveTowards( transform.position, new Vector3(Bed.transform.GetChild(0).transform.position.x, 0.2f, Bed.transform.GetChild(0).transform.position.z), 5 * Time.deltaTime);
+            transform.position = new Vector3(Bed.transform.GetChild(0).transform.position.x, 0.2f, Bed.transform.GetChild(0).transform.position.z);
+            transform.eulerAngles = new Vector3(0, -90, 0);
+            m_GameIsFinished = true;
             StartCoroutine(CameraBehavior.Instance.FadeBlackScreen(1, 3, 0));
             return;
         }
