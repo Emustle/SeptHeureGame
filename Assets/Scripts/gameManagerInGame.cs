@@ -11,7 +11,7 @@ public class gameManagerInGame : MonoBehaviour
     void Start()
     {
         MenuPause.SetActive(false);
-        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("TestHV"))
+        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Tutoriel"))
         {
             
             Tuto.SetActive(true);

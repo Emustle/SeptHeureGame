@@ -1028,16 +1028,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManagerInGame
       objectReference: {fileID: 0}
-    - target: {fileID: 304213071390330795, guid: 6c7784ebf3f119747b0c5c5f76579b4e,
-        type: 3}
-      propertyPath: MenuPause
-      value: 
-      objectReference: {fileID: 716107562}
-    - target: {fileID: 304213071390330795, guid: 6c7784ebf3f119747b0c5c5f76579b4e,
-        type: 3}
-      propertyPath: Tuto
-      value: 
-      objectReference: {fileID: 635137627}
     - target: {fileID: 304213071390330794, guid: 6c7784ebf3f119747b0c5c5f76579b4e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1093,6 +1083,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 304213071390330795, guid: 6c7784ebf3f119747b0c5c5f76579b4e,
+        type: 3}
+      propertyPath: MenuPause
+      value: 
+      objectReference: {fileID: 716107562}
+    - target: {fileID: 304213071390330795, guid: 6c7784ebf3f119747b0c5c5f76579b4e,
+        type: 3}
+      propertyPath: Tuto
+      value: 
+      objectReference: {fileID: 635137627}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c7784ebf3f119747b0c5c5f76579b4e, type: 3}
 --- !u!1001 &1817908784
