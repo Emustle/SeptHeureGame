@@ -152,6 +152,9 @@ public class CameraBehavior : MonoBehaviour
             case 2:
                 t_NextScene = "Level3";
                 break;
+            case 3:
+                t_NextScene = "credit";
+                break;
         }
         SceneManager.LoadScene(t_NextScene, LoadSceneMode.Single);
         yield break;

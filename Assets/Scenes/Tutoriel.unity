@@ -3937,6 +3937,16 @@ PrefabInstance:
       propertyPath: Ennemi
       value: 
       objectReference: {fileID: 243600065}
+    - target: {fileID: 8213611073403287405, guid: 0f1b3d0168c7e8f4caea4d9eb2b3e99c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8213611073403287405, guid: 0f1b3d0168c7e8f4caea4d9eb2b3e99c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8213611071586071865, guid: 0f1b3d0168c7e8f4caea4d9eb2b3e99c,
         type: 3}
       propertyPath: m_Layer
@@ -4572,6 +4582,7 @@ Transform:
   - {fileID: 443990317}
   - {fileID: 937400806}
   - {fileID: 916687673}
+  - {fileID: 1280419696}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
