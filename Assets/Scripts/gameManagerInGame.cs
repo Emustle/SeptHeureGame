@@ -28,7 +28,7 @@ public class gameManagerInGame : MonoBehaviour
         {
             PauseMenu();
         }
-        if (Time.time > 5f)
+        if (Time.time > 10f)
         {
             Tuto.SetActive(false);
         }
