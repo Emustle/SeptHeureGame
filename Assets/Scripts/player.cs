@@ -77,6 +77,7 @@ public class player : MonoBehaviour
             transform.eulerAngles = new Vector3(0, -90, 0);
             m_GameIsFinished = true;
             StartCoroutine(CameraBehavior.Instance.FadeBlackScreen(1, 3, 0));
+            StartCoroutine(CameraBehavior.Instance.WaitForNextLevel(3));
             return;
         }
 
