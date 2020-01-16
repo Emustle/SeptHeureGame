@@ -4811,6 +4811,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1049023845, guid: abedecb39e64ed241a189a8ab2398a6a, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1049023846, guid: abedecb39e64ed241a189a8ab2398a6a, type: 3}
       propertyPath: m_Texture
       value: 
@@ -4823,6 +4827,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460765287400745483, guid: abedecb39e64ed241a189a8ab2398a6a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460765286614205652, guid: abedecb39e64ed241a189a8ab2398a6a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460765287400745481, guid: abedecb39e64ed241a189a8ab2398a6a,
+        type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5673563376657133126, guid: abedecb39e64ed241a189a8ab2398a6a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 45416241917889944, guid: abedecb39e64ed241a189a8ab2398a6a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8524966868195361478, guid: abedecb39e64ed241a189a8ab2398a6a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abedecb39e64ed241a189a8ab2398a6a, type: 3}
