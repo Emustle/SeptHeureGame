@@ -11,6 +11,8 @@ public class player : MonoBehaviour
     public GameObject cookie;
     public GameObject cookie1;
     public GameObject cookie2;
+
+    public GameObject Ennemi;
     private Vector3 m_DesiredDirection;
     private Vector3 m_NextPos;
     private bool m_IsNextPosSet;
@@ -70,6 +72,7 @@ public class player : MonoBehaviour
         //ROTATION ET DEPLACEMENT
         if(!m_IsMoving && m_CurrentTile.GetComponent<TileBehavior>().TileType == TileBehavior.TileTypeEnum.BED && m_GotAllObjects)
         {
+            Destroy(Ennemi);
             m_Animator.SetBool("IsMoving", false);
             m_Animator.SetTrigger("GoToSleep");
             //transform.position = Vector3.MoveTowards( transform.position, new Vector3(Bed.transform.GetChild(0).transform.position.x, 0.2f, Bed.transform.GetChild(0).transform.position.z), 5 * Time.deltaTime);
