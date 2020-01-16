@@ -39,7 +39,8 @@ public class CameraBehavior : MonoBehaviour
         m_Offset = new Vector3(0, 2f, -2f);
         Color t_color = m_BlackScreen.GetComponent<RawImage>().color;
         m_BlackScreen.GetComponent<RawImage>().color = new Color(t_color.r, t_color.g, t_color.b, 255);
-        m_BlackScreenText.GetComponent<RawImage>().color = new Color(t_color.r, t_color.g, t_color.b, 255);
+        if(m_BlackScreenText)
+            m_BlackScreenText.GetComponent<RawImage>().color = new Color(t_color.r, t_color.g, t_color.b, 255);
         StartCoroutine(FadeBlackScreen(-1, 3, 3));
     }
 
