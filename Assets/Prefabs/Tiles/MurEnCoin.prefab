@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1686742797994953926}
   - component: {fileID: 4329383678731040970}
   - component: {fileID: 3491266058810871905}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MurEnCoin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,6 +122,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: murCoin 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 6639c729e2a41be448dbbe7006596022,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6639c729e2a41be448dbbe7006596022,
         type: 3}
