@@ -20,6 +20,6 @@ public class GameManagerHistoire : MonoBehaviour
     }
     public void commencer()
     {
-        SceneManager.LoadScene("TestHV");
+        SceneManager.LoadScene("Tutoriel");
     }
 }
