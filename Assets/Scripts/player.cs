@@ -18,6 +18,8 @@ public class player : MonoBehaviour
     private float m_KeyRepeatRate = 0.1f;
     private float m_InputHoldTime;
 
+    private Animator m_Animator;
+
     [SerializeField]
     private GameObject m_StartingTile;
     private GameObject m_CurrentTile;
@@ -31,6 +33,7 @@ public class player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        m_Animator = GetComponent<Animator>();
         m_CurrentTile = m_StartingTile;
         m_RotSpeed = 800f;
         //m_Rb = GetComponent<Rigidbody>();
@@ -46,6 +49,11 @@ public class player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 t_MovementVector = new Vector3(0, 0.2f, 0);
+        
+        //Debug.Log(gameObject.transform.position.z + "/" + CurrentTile.transform.position.z);
+        
+        
         //ROTATION ET DEPLACEMENT
         if(!m_IsMoving && m_CurrentTile.GetComponent<TileBehavior>().TileType == TileBehavior.TileTypeEnum.BED && m_GotAllObjects)
         {
@@ -61,7 +69,7 @@ public class player : MonoBehaviour
             //Désactivation du pickable de la case
             m_CurrentTile.GetComponent<TileBehavior>().TileType = TileBehavior.TileTypeEnum.WALKABLE;
 
-            Debug.LogWarning("Le joueur a ramssé un objet");
+            Debug.LogWarning("Le joueur a ramassé un objet");
             //Ajout des points
             m_NbObjectsRetrieved++;
 
@@ -77,6 +85,15 @@ public class player : MonoBehaviour
 
         float t_HorizontalDir = Input.GetAxis("Horizontal");
         float t_VerticalDir = Input.GetAxis("Vertical");
+        if (t_VerticalDir != 0 || t_HorizontalDir != 0)
+        {
+            m_Animator.SetBool("IsMoving", true);
+            //Debug.Log("AAAA");
+        }
+        else
+        {
+            m_Animator.SetBool("IsMoving", false);
+        }
         if ((t_HorizontalDir != 0 || t_VerticalDir != 0) && !m_IsMoving && m_InputHoldTime > m_KeyRepeatRate)
         {
             
