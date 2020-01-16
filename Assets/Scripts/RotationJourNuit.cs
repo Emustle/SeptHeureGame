@@ -49,12 +49,12 @@ public class RotationJourNuit : MonoBehaviour
         //apply the Quaternion.eulerAngles change to the gameObject
         transform.rotation = currentRotation;
         //modifying the Vector3, based on input multiplied by speed and time
-        m_RotationToGo = m_CurrentEulerAngles.x;
+        m_RotationToGo = m_CurrentEulerAngles.x - m_TargetRotation;
         if (m_CurrentEulerAngles.x <= m_TargetRotation)
         {
             rotationSpeed = 0;
         }
-
+        //Debug.Log(m_RotationToGo + "///" + m_FullRotation);
         CameraBehavior.Instance.TickClockNeedle(m_RotationToGo / m_FullRotation);
         
     }

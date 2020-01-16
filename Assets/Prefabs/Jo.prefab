@@ -368,7 +368,6 @@ GameObject:
   - component: {fileID: 8213611072723653484}
   - component: {fileID: 8213611072723653487}
   - component: {fileID: 8213611072723653486}
-  - component: {fileID: 8213611072723653483}
   - component: {fileID: 8213611072723653482}
   m_Layer: 0
   m_Name: Jo
@@ -440,22 +439,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.7075424, y: 0.5083147, z: 0.31669712}
   m_Center: {x: 0.022863388, y: -0.3305505, z: -0.06920242}
---- !u!54 &8213611072723653483
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8213611072723653521}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 80
-  m_CollisionDetection: 0
 --- !u!136 &8213611072723653482
 CapsuleCollider:
   m_ObjectHideFlags: 0
