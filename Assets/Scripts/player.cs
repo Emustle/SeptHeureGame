@@ -6,7 +6,11 @@ public class player : MonoBehaviour
 {
     public AudioSource sourceAudioPas;
     public AudioClip PasDeJo;
-    public AudioClip cookie;
+    public AudioClip cookieSon;
+    float nombreCookie = 0;
+    public GameObject cookie;
+    public GameObject cookie1;
+    public GameObject cookie2;
     private Vector3 m_DesiredDirection;
     private Vector3 m_NextPos;
     private bool m_IsNextPosSet;
@@ -81,7 +85,20 @@ public class player : MonoBehaviour
             //Destruction de l'item
             
             Destroy(m_CurrentTile.transform.GetChild(0).gameObject);
-            sourceAudioPas.PlayOneShot(cookie);
+            nombreCookie += 1;
+            if (nombreCookie == 1)
+            {
+                cookie.SetActive(true);
+            }
+            else if (nombreCookie == 2)
+            {
+                cookie1.SetActive(true);
+            }
+            else if (nombreCookie == 3)
+            {
+                cookie2.SetActive(true);
+            }
+            sourceAudioPas.PlayOneShot(cookieSon);
             //Désactivation du pickable de la case
             m_CurrentTile.GetComponent<TileBehavior>().TileType = TileBehavior.TileTypeEnum.WALKABLE;
 

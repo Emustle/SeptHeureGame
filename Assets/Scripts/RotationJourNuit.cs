@@ -6,6 +6,7 @@ public class RotationJourNuit : MonoBehaviour
 {   
     public GameObject bonhomme7h;
     public AudioSource audioSource;
+    public AudioClip sonAmbiantDepart;
     public AudioClip songHorloge;
     public AudioClip songAmbiant;
     public int timer;
@@ -27,6 +28,7 @@ public class RotationJourNuit : MonoBehaviour
     void Start()
     {
         audioSource.clip = songHorloge;
+        audioSource.PlayOneShot(sonAmbiantDepart);
         m_InitialRotation = transform.rotation.eulerAngles.x;
         m_FullRotation = m_InitialRotation - m_TargetRotation;
         m_RotationToGo = m_FullRotation;
