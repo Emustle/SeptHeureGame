@@ -12,7 +12,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SurDeQuitterCanvas.SetActive(false);
+        if(SurDeQuitterCanvas)
+            SurDeQuitterCanvas.SetActive(false);
         
     }
 
@@ -42,6 +43,12 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
     }
-    
-    
+
+    public void NavMenu()
+    {
+        Debug.Log("OK");
+        SceneManager.LoadScene("menu");
+    }
+
+
 }

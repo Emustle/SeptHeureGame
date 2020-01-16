@@ -10,7 +10,11 @@ public class gameManagerInGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        MenuPause.SetActive(false);
+        if (MenuPause)
+        {
+            MenuPause.SetActive(false);
+        }
+        
         if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Tutoriel"))
         {
             
