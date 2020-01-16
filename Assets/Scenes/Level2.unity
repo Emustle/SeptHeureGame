@@ -3628,6 +3628,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1150336944}
+    - target: {fileID: 5460765288341304208, guid: abedecb39e64ed241a189a8ab2398a6a,
+        type: 3}
+      propertyPath: LevelOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1049023845, guid: abedecb39e64ed241a189a8ab2398a6a, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -3640,7 +3645,7 @@ PrefabInstance:
     - target: {fileID: 5460765287400745483, guid: abedecb39e64ed241a189a8ab2398a6a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5460765286614205652, guid: abedecb39e64ed241a189a8ab2398a6a,
         type: 3}
@@ -3695,12 +3700,12 @@ PrefabInstance:
     - target: {fileID: 5673563376657133126, guid: abedecb39e64ed241a189a8ab2398a6a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 45416241917889944, guid: abedecb39e64ed241a189a8ab2398a6a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8524966868195361478, guid: abedecb39e64ed241a189a8ab2398a6a,
         type: 3}

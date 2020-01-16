@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class CameraBehavior : MonoBehaviour
 {
     public GameObject player;
+    public int LevelOrder;
     private Vector3 m_Offset;
     private GameObject m_BlackScreen;
     private GameObject m_BlackScreenText;
@@ -127,6 +128,32 @@ public class CameraBehavior : MonoBehaviour
         SceneManager.LoadScene("credit", LoadSceneMode.Single);
         //Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 
+
+        //Debug.Log(m_UiHurtScreen.GetComponent<RawImage>().color);
+    }
+
+    public IEnumerator WaitForNextLevel(float a_Duration)
+    {
+        float t_ElapsedTime = 0f;
+
+        t_ElapsedTime = 0f;
+        while (t_ElapsedTime < a_Duration + 3)
+        {
+            t_ElapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        string t_NextScene = "";
+        switch (LevelOrder)
+        {
+            case 1:
+                t_NextScene = "Level2";
+                break;
+            case 2:
+                break;
+        }
+        SceneManager.LoadScene(t_NextScene, LoadSceneMode.Single);
+        yield break;
 
         //Debug.Log(m_UiHurtScreen.GetComponent<RawImage>().color);
     }
